@@ -27,8 +27,14 @@ repositories {
 }
 
 dependencies {
+    annotationProcessor 'org.projectlombok:lombok:1.18.0'
+    compileOnly 'org.projectlombok:lombok:1.18.0'
+
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.5'
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.5'
+
+    compile 'com.glookast.commons:commons-base:1.2.3'
+    compile 'com.glookast.commons:commons-timecode:1.4.0'
 
     testCompile "junit:junit:4.12"
 }
