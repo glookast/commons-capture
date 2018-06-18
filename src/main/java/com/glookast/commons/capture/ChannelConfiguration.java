@@ -15,7 +15,14 @@ import java.util.UUID;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, defaultImpl = ChannelConfiguration.class)
 public class ChannelConfiguration
 {
-    private boolean loopRecordingEnabled;
-    private UUID loopRecordingVideoFormatId;
-    private int loopRecordingMaxDuration;
+    protected Boolean loopRecordingEnabled;
+    protected UUID loopRecordingVideoFormatId;
+    protected Integer loopRecordingMaxDuration;
+
+    public ChannelConfiguration(ChannelConfiguration channelConfiguration)
+    {
+        this.loopRecordingEnabled = channelConfiguration.loopRecordingEnabled;
+        this.loopRecordingVideoFormatId = channelConfiguration.loopRecordingVideoFormatId;
+        this.loopRecordingMaxDuration = channelConfiguration.loopRecordingMaxDuration;
+    }
 }

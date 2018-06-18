@@ -14,10 +14,20 @@ import lombok.NoArgsConstructor;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, defaultImpl = PictureFormat.class)
 public class PictureFormat
 {
-    private int width;
-    private int height;
-    private BufferFieldOrder bufferFieldOrder;
-    private Rational frameRate;
-    private Rational aspectRatio;
-    private PixelFormat pixelFormat;
+    protected int width;
+    protected int height;
+    protected BufferFieldOrder bufferFieldOrder;
+    protected Rational frameRate;
+    protected Rational aspectRatio;
+    protected PixelFormat pixelFormat;
+
+    public PictureFormat(PictureFormat pictureFormat)
+    {
+        this.width = pictureFormat.width;
+        this.height = pictureFormat.height;
+        this.bufferFieldOrder = pictureFormat.bufferFieldOrder;
+        this.frameRate = pictureFormat.frameRate != null ? new Rational(pictureFormat.frameRate) : null;
+        this.aspectRatio = pictureFormat.aspectRatio != null ? new Rational(pictureFormat.aspectRatio) : null;
+        this.pixelFormat = pictureFormat.pixelFormat;
+    }
 }

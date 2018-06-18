@@ -13,7 +13,14 @@ import lombok.NoArgsConstructor;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, defaultImpl = SoundFormat.class)
 public class SoundFormat
 {
-    private int channelCount;
-    private int sampleSize;
-    private int samplingRate;
+    protected int channelCount;
+    protected int sampleSize;
+    protected int samplingRate;
+
+    public SoundFormat(SoundFormat soundFormat)
+    {
+        this.channelCount = soundFormat.channelCount;
+        this.sampleSize = soundFormat.sampleSize;
+        this.samplingRate = soundFormat.samplingRate;
+    }
 }

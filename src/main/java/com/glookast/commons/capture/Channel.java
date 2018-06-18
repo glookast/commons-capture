@@ -15,14 +15,28 @@ import java.util.UUID;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, defaultImpl = Channel.class)
 public class Channel
 {
-    private int id;
-    private ChannelStatus status;
-    private String bufferLocation;
-    private String streamingUrl;
-    private SignalFormat inputSignal;
-    private ReferenceSignalStatus referenceSignalStatus;
-    private Boolean loopRecordingEnabled;
-    private UUID loopRecordingVideoFormatId;
-    private Integer loopRecordingMaxDuration;
-    private Boolean playoutEnabled;
+    protected int id;
+    protected ChannelStatus status;
+    protected String bufferLocation;
+    protected String streamingUrl;
+    protected SignalFormat inputSignal;
+    protected ReferenceSignalStatus referenceSignalStatus;
+    protected Boolean loopRecordingEnabled;
+    protected UUID loopRecordingVideoFormatId;
+    protected Integer loopRecordingMaxDuration;
+    protected Boolean playoutEnabled;
+
+    public Channel(Channel channel)
+    {
+        this.id = channel.id;
+        this.status = channel.status;
+        this.bufferLocation = channel.bufferLocation;
+        this.streamingUrl = channel.streamingUrl;
+        this.inputSignal = channel.inputSignal != null ? new SignalFormat(inputSignal) : null;
+        this.referenceSignalStatus = channel.referenceSignalStatus;
+        this.loopRecordingEnabled = channel.loopRecordingEnabled;
+        this.loopRecordingVideoFormatId = channel.loopRecordingVideoFormatId;
+        this.loopRecordingMaxDuration = channel.loopRecordingMaxDuration;
+        this.playoutEnabled = channel.playoutEnabled;
+    }
 }

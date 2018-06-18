@@ -25,4 +25,18 @@ public class TransferJob
     protected TransferJobStatus status;
     protected String statusMessage;
     protected double progress;
+
+    public TransferJob(TransferJob transferJob)
+    {
+        this.id = transferJob.id;
+        this.channelId = transferJob.channelId;
+        this.captureJobId = transferJob.captureJobId;
+        this.transformProfileId = transferJob.transformProfileId;
+        this.transformProfileName = transferJob.transformProfileName;
+        this.outputSystemId = transferJob.outputSystemId;
+        this.outputSystemName = transferJob.outputSystemName;
+        this.status = transferJob.status;
+        this.statusMessage = transferJob.statusMessage;
+        this.progress = transferJob.progress;
+    }
 }

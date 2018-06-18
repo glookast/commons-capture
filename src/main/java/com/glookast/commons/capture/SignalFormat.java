@@ -13,6 +13,12 @@ import lombok.NoArgsConstructor;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, defaultImpl = SignalFormat.class)
 public class SignalFormat
 {
-    private PictureFormat picture;
-    private SoundFormat sound;
+    protected PictureFormat picture;
+    protected SoundFormat sound;
+
+    public SignalFormat(SignalFormat signalFormat)
+    {
+        this.picture = signalFormat.picture != null ? new PictureFormat(signalFormat.picture) : null;
+        this.sound = signalFormat.sound != null ? new SoundFormat(signalFormat.sound) : null;
+    }
 }

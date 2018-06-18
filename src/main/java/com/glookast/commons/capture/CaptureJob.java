@@ -37,6 +37,7 @@ public class CaptureJob
     protected String ancDataLines;
     protected AvidCaptureJobProperties avid;
     protected CaptureJobStatus status;
+    protected String statusMessage;
     protected Integer queuePosition;
     protected Timecode actualStartTimecode;
     protected Timecode actualEndTimecode;
@@ -45,4 +46,35 @@ public class CaptureJob
     protected OffsetDateTime actualEndDate;
     protected OffsetDateTime createdDate;
     protected OffsetDateTime modifiedDate;
+
+    public CaptureJob(CaptureJob captureJob)
+    {
+        this.id = captureJob.id;
+        this.parentId = captureJob.parentId;
+        this.channelId = captureJob.channelId;
+        this.templateId = captureJob.templateId;
+        this.priority = captureJob.priority;
+        this.timecodeSource = captureJob.timecodeSource;
+        this.startTimecode = captureJob.startTimecode != null ? new Timecode(captureJob.startTimecode) : null;
+        this.endTimecode = captureJob.endTimecode != null ? new Timecode(captureJob.endTimecode) : null;
+        this.duration = captureJob.duration != null ? new TimecodeDuration(captureJob.duration) : null;;
+        this.stopOnTimecodeBreak = captureJob.stopOnTimecodeBreak;
+        this.autoRestart = captureJob.autoRestart;
+        this.externalId = captureJob.externalId;
+        this.clipName = captureJob.clipName;
+        this.tapeName = captureJob.tapeName;
+        this.startTimecodeOverride = captureJob.startTimecodeOverride != null ? new Timecode(captureJob.startTimecodeOverride) : null;
+        this.ancDataLines = captureJob.ancDataLines;
+        this.avid = captureJob.avid != null ? new AvidCaptureJobProperties(avid) : null;
+        this.status = captureJob.status;
+        this.statusMessage = captureJob.statusMessage;
+        this.queuePosition = captureJob.queuePosition;
+        this.actualStartTimecode = captureJob.actualStartTimecode != null ? new Timecode(captureJob.actualStartTimecode) : null;
+        this.actualEndTimecode = captureJob.actualEndTimecode != null ? new Timecode(captureJob.actualEndTimecode) : null;
+        this.actualDuration = captureJob.actualDuration != null ? new TimecodeDuration(captureJob.actualDuration) : null;
+        this.actualStartDate = captureJob.actualStartDate;
+        this.actualEndDate = captureJob.actualEndDate;
+        this.createdDate = captureJob.createdDate;
+        this.modifiedDate = captureJob.modifiedDate;
+    }
 }

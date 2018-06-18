@@ -18,4 +18,12 @@ public class Locator
     protected LocatorColor color;
     protected String message;
     protected String notes;
+
+    public Locator(Locator locator)
+    {
+        this.timecode = locator.timecode != null ? new Timecode(locator.timecode) : null;
+        this.color = locator.color;
+        this.message = locator.message;
+        this.notes = locator.notes;
+    }
 }

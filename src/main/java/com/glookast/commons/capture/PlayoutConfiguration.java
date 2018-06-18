@@ -15,6 +15,13 @@ import lombok.NoArgsConstructor;
 public class PlayoutConfiguration
 {
     protected TimecodeSource timecodeSource;
-    protected boolean autoPlayEnabled;
-    protected boolean loopEnabled;
+    protected Boolean autoPlayEnabled;
+    protected Boolean loopEnabled;
+
+    public PlayoutConfiguration(PlayoutConfiguration playoutConfiguration)
+    {
+        this.timecodeSource = playoutConfiguration.timecodeSource;
+        this.autoPlayEnabled = playoutConfiguration.autoPlayEnabled;
+        this.loopEnabled = playoutConfiguration.loopEnabled;
+    }
 }

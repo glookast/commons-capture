@@ -15,4 +15,12 @@ public class AvidCaptureJobProperties
     protected String sourceMobId;
     protected String interplaySubfolder;
     protected Boolean interplaySplitResolutions;
+
+    public AvidCaptureJobProperties(AvidCaptureJobProperties avidCaptureJobProperties)
+    {
+        this.masterMobId = avidCaptureJobProperties.masterMobId;
+        this.sourceMobId = avidCaptureJobProperties.sourceMobId;
+        this.interplaySubfolder = avidCaptureJobProperties.interplaySubfolder;
+        this.interplaySplitResolutions = avidCaptureJobProperties.interplaySplitResolutions;
+    }
 }

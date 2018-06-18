@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -16,9 +17,17 @@ import java.util.UUID;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, defaultImpl = FileCollection.class)
 public class FileCollection
 {
-    private UUID videoFormatId;
-    private UUID audioFormatId;
-    private UUID containerFormatId;
+    protected UUID videoFormatId;
+    protected UUID audioFormatId;
+    protected UUID containerFormatId;
 
-    private List<String> files;
+    protected List<String> files;
+
+    public FileCollection(FileCollection fileCollection)
+    {
+        this.videoFormatId = fileCollection.videoFormatId;
+        this.audioFormatId = fileCollection.audioFormatId;
+        this.containerFormatId = fileCollection.containerFormatId;
+        this.files = fileCollection.files != null ? new ArrayList<>(fileCollection.files) : null;
+    }
 }

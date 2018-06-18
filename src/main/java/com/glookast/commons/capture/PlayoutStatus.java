@@ -29,4 +29,19 @@ public class PlayoutStatus
     protected Long maximumPosition;
     protected Long position;
     protected Timecode timecode;
+
+    public PlayoutStatus(PlayoutStatus playoutStatus)
+    {
+        this.timecodeSource = playoutStatus.timecodeSource;
+        this.autoPlayEnabled = playoutStatus.autoPlayEnabled;
+        this.loopEnabled = playoutStatus.loopEnabled;
+        this.inputChannel = playoutStatus.inputChannel;
+        this.outputChannel = playoutStatus.outputChannel;
+        this.captureJobId = playoutStatus.captureJobId;
+        this.playbackRate = playoutStatus.playbackRate;
+        this.minimumPosition = playoutStatus.minimumPosition;
+        this.maximumPosition = playoutStatus.maximumPosition;
+        this.position = playoutStatus.position;
+        this.timecode = playoutStatus.timecode != null ? new Timecode(playoutStatus.timecode) : null;
+    }
 }
