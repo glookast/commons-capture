@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.net.URL;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @Data
@@ -18,10 +20,12 @@ public class NotificationEndpoint
 {
     protected UUID id;
     protected URL url;
+    protected Map<String, Object> filter;
 
     public NotificationEndpoint(NotificationEndpoint notificationEndpoint)
     {
         id = notificationEndpoint.id;
         url = notificationEndpoint.url;
+        filter = notificationEndpoint.filter != null ? new LinkedHashMap<>(notificationEndpoint.filter) : null;
     }
 }
