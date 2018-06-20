@@ -77,4 +77,47 @@ public class CaptureJob
         this.createdDate = captureJob.createdDate;
         this.modifiedDate = captureJob.modifiedDate;
     }
+
+    public CaptureJob(int channelId, UUID templateId, CaptureJobPriority priority, TimecodeSource timecodeSource, Timecode startTimecode, Timecode endTimecode, TimecodeDuration duration, Boolean stopOnTimecodeBreak, Boolean autoRestart, String externalId, String clipName, String tapeName, Timecode startTimecodeOverride, String ancDataLines, AvidCaptureJobProperties avid)
+    {
+        this.channelId = channelId;
+        this.templateId = templateId;
+        this.priority = priority;
+        this.timecodeSource = timecodeSource;
+        this.startTimecode = startTimecode;
+        this.endTimecode = endTimecode;
+        this.duration = duration;
+        this.stopOnTimecodeBreak = stopOnTimecodeBreak;
+        this.autoRestart = autoRestart;
+        this.externalId = externalId;
+        this.clipName = clipName;
+        this.tapeName = tapeName;
+        this.startTimecodeOverride = startTimecodeOverride;
+        this.ancDataLines = ancDataLines;
+        this.avid = avid;
+    }
+
+    public CaptureJob(int channelId, UUID templateId, TimecodeSource timecodeSource, Timecode startTimecode, TimecodeDuration duration, String clipName, String tapeName)
+    {
+        this.channelId = channelId;
+        this.templateId = templateId;
+        this.timecodeSource = timecodeSource;
+        this.startTimecode = startTimecode;
+        this.duration = duration;
+        this.clipName = clipName;
+        this.tapeName = tapeName;
+    }
+
+    public CaptureJob(int channelId, UUID templateId, TimecodeDuration duration)
+    {
+        this.channelId = channelId;
+        this.templateId = templateId;
+        this.duration = duration;
+    }
+
+    public CaptureJob(int channelId, UUID templateId)
+    {
+        this.channelId = channelId;
+        this.templateId = templateId;
+    }
 }
