@@ -1,5 +1,6 @@
 package com.glookast.commons.capture;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.glookast.commons.timecode.Timecode;
@@ -21,9 +22,21 @@ public class Locator
 
     public Locator(Locator locator)
     {
-        this.timecode = locator.timecode != null ? new Timecode(locator.timecode) : null;
+        this.timecode = locator.timecode;
         this.color = locator.color;
         this.message = locator.message;
         this.notes = locator.notes;
+    }
+
+    @JsonIgnore
+    public String getMessageNotes()
+    {
+        if (notes == null || notes.isEmpty()) {
+            return message;
+        } else if (message == null || message.isEmpty()) {
+            return notes;
+        } else {
+            return message + ": " + notes;
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.glookast.commons.capture;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.glookast.commons.base.Rational;
@@ -29,5 +30,12 @@ public class PictureFormat
         this.frameRate = pictureFormat.frameRate != null ? new Rational(pictureFormat.frameRate) : null;
         this.aspectRatio = pictureFormat.aspectRatio != null ? new Rational(pictureFormat.aspectRatio) : null;
         this.pixelFormat = pictureFormat.pixelFormat;
+    }
+
+    @JsonIgnore
+    public boolean isInterlaced()
+    {
+        return this.bufferFieldOrder == BufferFieldOrder.INTERLACED_UPPER_FIELD_FIRST ||
+               this.bufferFieldOrder == BufferFieldOrder.INTERLACED_LOWER_FIELD_FIRST;
     }
 }
