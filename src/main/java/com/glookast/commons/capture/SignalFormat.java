@@ -15,10 +15,12 @@ public class SignalFormat
 {
     protected PictureFormat picture;
     protected SoundFormat sound;
+    protected boolean ancDataPresent;
 
     public SignalFormat(SignalFormat signalFormat)
     {
         this.picture = signalFormat.picture != null ? new PictureFormat(signalFormat.picture) : null;
         this.sound = signalFormat.sound != null ? new SoundFormat(signalFormat.sound) : null;
+        this.ancDataPresent = signalFormat.ancDataPresent;
     }
 }
