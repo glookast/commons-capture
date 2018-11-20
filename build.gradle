@@ -3,7 +3,7 @@ apply plugin: "maven"
 apply plugin: "signing"
 
 group = "com.glookast.commons"
-version = "2.0.2"
+version = "2.0.3-SNAPSHOT"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -98,6 +98,11 @@ uploadArchives {
                         id "joostrovers"
                         name "Joost Rovers"
                         email "joost.rovers@glookast.com"
+                    }
+                    developer {
+                        id "tiagoafpereira"
+                        name "Tiago Pereira"
+                        email "tiago.pereira@glookast.com"
                     }
                 }
             }
