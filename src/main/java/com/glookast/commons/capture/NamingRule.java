@@ -14,6 +14,12 @@ import lombok.NoArgsConstructor;
 public class NamingRule
 {
     protected Integer id;
+    protected String name;
     protected String rule;
+
+    public String getName()
+    {
+        return this.name != null ? name : rule;
+    }
 
 }
