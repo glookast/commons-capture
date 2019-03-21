@@ -12,6 +12,8 @@ public enum CaptureJobStatus
     SCHEDULED,
     @JsonProperty("RECORDING")
     RECORDING,
+    @JsonProperty("RECORDING_TRANSFER_FAILED")
+    RECORDING_TRANSFER_FAILED,
     @JsonProperty("TRANSFERRING")
     TRANSFERRING,
     @JsonProperty("PAUSED")

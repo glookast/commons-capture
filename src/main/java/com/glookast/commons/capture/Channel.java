@@ -25,6 +25,8 @@ public class Channel
     protected UUID loopRecordingVideoFormatId;
     protected Integer loopRecordingMaxDuration;
     protected Boolean playoutEnabled;
+    protected Boolean vtrControlEnabled;
+    protected String vtrControlComPort;
 
     public Channel(Channel channel)
     {
@@ -38,5 +40,7 @@ public class Channel
         this.loopRecordingVideoFormatId = channel.loopRecordingVideoFormatId;
         this.loopRecordingMaxDuration = channel.loopRecordingMaxDuration;
         this.playoutEnabled = channel.playoutEnabled;
+        this.vtrControlEnabled = channel.vtrControlEnabled;
+        this.vtrControlComPort = channel.vtrControlComPort;
     }
 }
