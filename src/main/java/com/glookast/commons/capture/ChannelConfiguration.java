@@ -18,15 +18,15 @@ public class ChannelConfiguration
     protected Boolean loopRecordingEnabled;
     protected UUID loopRecordingVideoFormatId;
     protected Integer loopRecordingMaxDuration;
-    protected Boolean vtrControlEnabled;
-    protected String vtrControlComPort;
+    protected Boolean vtrRecordingEnabled;
+    protected String vtrRecordingComPort;
 
     public ChannelConfiguration(ChannelConfiguration channelConfiguration)
     {
         this.loopRecordingEnabled = channelConfiguration.loopRecordingEnabled;
         this.loopRecordingVideoFormatId = channelConfiguration.loopRecordingVideoFormatId;
         this.loopRecordingMaxDuration = channelConfiguration.loopRecordingMaxDuration;
-        this.vtrControlEnabled = channelConfiguration.vtrControlEnabled;
-        this.vtrControlComPort = channelConfiguration.vtrControlComPort;
+        this.vtrRecordingEnabled = channelConfiguration.vtrRecordingEnabled;
+        this.vtrRecordingComPort = channelConfiguration.vtrRecordingComPort;
     }
 }
