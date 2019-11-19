@@ -28,8 +28,8 @@ public class CaptureJob
     protected Timecode startTimecode;
     protected Timecode endTimecode;
     protected TimecodeDuration duration;
-    protected Boolean stopOnTimecodeBreak;
-    protected Boolean autoRestart;
+    protected TimecodeDuration splitDuration;
+    protected TimecodeBreakRule timecodeBreakRule;
     protected String externalId;
     protected String clipName;
     protected String tapeName;
@@ -58,8 +58,8 @@ public class CaptureJob
         this.startTimecode = captureJob.startTimecode != null ? new Timecode(captureJob.startTimecode) : null;
         this.endTimecode = captureJob.endTimecode != null ? new Timecode(captureJob.endTimecode) : null;
         this.duration = captureJob.duration != null ? new TimecodeDuration(captureJob.duration) : null;;
-        this.stopOnTimecodeBreak = captureJob.stopOnTimecodeBreak;
-        this.autoRestart = captureJob.autoRestart;
+        this.splitDuration = captureJob.splitDuration;
+        this.timecodeBreakRule = captureJob.timecodeBreakRule;
         this.externalId = captureJob.externalId;
         this.clipName = captureJob.clipName;
         this.tapeName = captureJob.tapeName;
@@ -78,7 +78,7 @@ public class CaptureJob
         this.modifiedDate = captureJob.modifiedDate;
     }
 
-    public CaptureJob(int channelId, UUID templateId, CaptureJobPriority priority, TimecodeSource timecodeSource, Timecode startTimecode, Timecode endTimecode, TimecodeDuration duration, Boolean stopOnTimecodeBreak, Boolean autoRestart, String externalId, String clipName, String tapeName, Timecode startTimecodeOverride, String ancDataLines, AvidCaptureJobProperties avid)
+    public CaptureJob(int channelId, UUID templateId, CaptureJobPriority priority, TimecodeSource timecodeSource, Timecode startTimecode, Timecode endTimecode, TimecodeDuration duration, TimecodeDuration splitDuration, TimecodeBreakRule timecodeBreakRule, String externalId, String clipName, String tapeName, Timecode startTimecodeOverride, String ancDataLines, AvidCaptureJobProperties avid)
     {
         this.channelId = channelId;
         this.templateId = templateId;
@@ -87,8 +87,8 @@ public class CaptureJob
         this.startTimecode = startTimecode;
         this.endTimecode = endTimecode;
         this.duration = duration;
-        this.stopOnTimecodeBreak = stopOnTimecodeBreak;
-        this.autoRestart = autoRestart;
+        this.splitDuration = splitDuration;
+        this.timecodeBreakRule = timecodeBreakRule;
         this.externalId = externalId;
         this.clipName = clipName;
         this.tapeName = tapeName;
