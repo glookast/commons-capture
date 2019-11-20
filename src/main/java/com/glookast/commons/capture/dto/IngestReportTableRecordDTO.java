@@ -21,7 +21,7 @@ public class IngestReportTableRecordDTO {
     private int progress;
     private String state;
     private String statusMessage;
-    private boolean canReIngestJob;
-    private boolean canReCheckInJob;
-    private boolean canReplaceOutputSystem;
+    private boolean reIngestJobPossible;
+    private boolean reCheckInJobPossible;
+    private boolean replaceOutputSystemPossible;
 }
