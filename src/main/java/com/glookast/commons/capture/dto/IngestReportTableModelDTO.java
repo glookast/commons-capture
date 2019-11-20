@@ -24,13 +24,17 @@ import java.util.UUID;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, defaultImpl = IngestReportTableModelDTO.class)
 public class IngestReportTableModelDTO {
 
-    private final List<String> outputSystemList = new ArrayList<>();
-    private final List<IngestReportTableRecordDTO> records = new ArrayList<>();
+    @Builder.Default
+    private List<String> outputSystemList = new ArrayList<>();
+
+    @Builder.Default
+    private List<IngestReportTableRecordDTO> records = new ArrayList<>();
+
     private UUID captureJobId;
     private String capturedClipName;
-    private boolean canAbortWorkflow;
-    private boolean canRetryWorkflow;
-    private boolean canPauseWorkflow;
-    private boolean canResumeWorkflow;
+    private boolean abortWorkflowPossible;
+    private boolean retryWorkflowPossible;
+    private boolean pauseWorkflowPossible;
+    private boolean resumeWorkflowPossible;
 
 }
