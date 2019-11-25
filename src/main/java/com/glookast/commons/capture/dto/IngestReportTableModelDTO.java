@@ -2,6 +2,7 @@ package com.glookast.commons.capture.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.glookast.commons.capture.dto.templates.OutputSystem.OutputSystemDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,7 +26,7 @@ import java.util.UUID;
 public class IngestReportTableModelDTO {
 
     @Builder.Default
-    private List<String> outputSystemList = new ArrayList<>();
+    private List<OutputSystemDTO> outputSystemList = new ArrayList<>();
 
     @Builder.Default
     private List<IngestReportTableRecordDTO> records = new ArrayList<>();
