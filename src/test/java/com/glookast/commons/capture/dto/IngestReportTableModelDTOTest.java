@@ -38,7 +38,7 @@ class IngestReportTableModelDTOTest {
     }
 
     @Test
-    void deserializeJSON() throws IOException {
+    void parseJSON() throws IOException {
 
         OutputSystemTypeDTO outputSystemTypeDTO = OutputSystemTypeDTO.builder()
             .id(1L)
